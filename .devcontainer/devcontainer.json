@@ -1,21 +1,22 @@
 {
   "name": "leetcode-go-kotlin",
-  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu-24.04",
   "features": {
     "ghcr.io/devcontainers/features/go:1": {
       "version": "1.23"
     },
     "ghcr.io/devcontainers/features/java:1": {
-      "version": "17"
+      "version": "21"
     }
   },
-  "postCreateCommand": "curl -s https://get.sdkman.io | bash && bash -lc \"source $HOME/.sdkman/bin/sdkman-init.sh && sdk install kotlin 2.1.10\"",
+  "postCreateCommand": "bash .devcontainer/setup.sh",
   "customizations": {
     "vscode": {
       "extensions": [
-        "leetcode.leetcode",
+        "LeetCode.vscode-leetcode",
         "golang.go",
-        "vscjava.vscode-java-pack"
+        "vscjava.vscode-java-pack",
+        "mathiasfrohlich.Kotlin"
       ],
       "settings": {
         "leetcode.workspaceFolder": "solutions",
